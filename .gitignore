@@ -1,3 +1,6 @@
 # .gitignore
 .env*.local
-.env
+.envnode_modules
+.next
+node_modules
+.next
