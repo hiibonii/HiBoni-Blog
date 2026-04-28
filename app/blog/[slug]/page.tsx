@@ -2,6 +2,7 @@ import { getPostBySlug } from '@/lib/posts';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import Link from 'next/link';
+import CommentSection from "@/components/CommentSection"; // Import default
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -30,6 +31,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <div className="prose prose-lg max-w-none text-gray-700 leading-loose">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
+      
+      {/* Perbaikan di sini: gunakan variabel slug yang sudah di-await */}
+      <CommentSection postSlug={slug} />
     </article>
   );
 }
