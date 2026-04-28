@@ -1,0 +1,11 @@
+# 1. Cek status untuk melihat nama file persisnya yang berwarna merah
+git status
+
+# 2. Tambahkan HANYA file markdown tersebut ke antrean
+git add content/nama-file-artikel-lo.md
+
+# 3. Kunci perubahan dengan pesan yang spesifik
+git commit -m "Content: Publish artikel baru tentang [Topik Artikel]"
+
+# 4. Dorong ke GitHub
+git push origin main
