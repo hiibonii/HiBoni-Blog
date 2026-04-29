@@ -2,7 +2,7 @@
 id: "U4WLKF9290402"
 title: "Menolak Lupa Jejak Marsinah dalam Sistem Buruh"
 slug: "menolak-lupa-jejak-marsinah"
-category: "Semantik"
+category: "Opini"
 img: "https://images.unsplash.com/photo-1553524551-27a0a4b86a1b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 date: "2026-04-29"
 description: "Menelisik relevansi perjuangan Marsinah di tengah gelombang PHK massal dan tantangan ekonomi digital menjelang May Day 2026."
