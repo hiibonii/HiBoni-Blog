@@ -1,35 +1,32 @@
 import { MetadataRoute } from 'next';
+// Import fungsi untuk mengambil semua artikel dari file konfigurasi lo
+import { getAllPosts } from '@/lib/posts'; 
 
-// Masukkan data post kamu di sini (atau import jika sudah dipisah ke file tersendiri)
-const ALL_POSTS = [
-  { slug: "arbitrary-arrest", lastMod: '2026-04-26' },
-  { slug: "freedom", lastMod: '2026-04-26' },
-  { slug: "the-art", lastMod: '2026-04-26' },
-  { slug: "modern", lastMod: '2026-04-26' },
-  { slug: "minimalist", lastMod: '2026-04-26' },
-  { slug: "building-scalable", lastMod: '2026-04-26' },
-];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = 'https://alboni.com'; // Pastikan domain ini benar saat live
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://alboni.com'; // Ganti dengan domain asli kamu nanti
+  // Ambil semua data artikel secara dinamis
+  const allPosts = getAllPosts();
 
   // 1. Link untuk halaman utama
-  const routes = [
+  const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'daily' as const,
+      changeFrequency: 'daily',
       priority: 1,
     },
   ];
 
   // 2. Link otomatis untuk semua detail blog
-  const blogPosts = ALL_POSTS.map((post) => ({
+  const blogPosts: MetadataRoute.Sitemap = allPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.lastMod || new Date()),
-    changeFrequency: 'weekly' as const,
+    // Pastikan field tanggal di data lo bernama 'date' atau sesuaikan dengan properti yang ada
+    lastModified: new Date(post.date || new Date()), 
+    changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
+  // Gabungkan semua rute
   return [...routes, ...blogPosts];
 }
