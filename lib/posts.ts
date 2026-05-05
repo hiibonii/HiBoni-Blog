@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+// Folder lo sudah benar menunjuk ke 'content'
 const postsDirectory = path.join(process.cwd(), 'content');
 
-// Pastikan ada kata 'export' di sini
 export function getAllPosts() {
   if (!fs.existsSync(postsDirectory)) return [];
   
@@ -15,26 +15,35 @@ export function getAllPosts() {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
 
+    // Di sinilah kita pasang jaring pengaman aslinya (fallback)
+    // Kalau data di file .md kosong atau salah ketik, sistem akan otomatis mengisinya
     return {
       slug,
-      ...(data as { title: string; category: string; img: string; id: number; date: string }),
+      title: data.title || "Untitled",
+      category: data.category || "Uncategorized",
+      img: data.img || "/placeholder.jpg", // Pastikan lo punya gambar darurat kalau lupa pasang banner
+      id: data.id || Date.now(),
+      date: data.date || new Date().toISOString().split('T')[0], 
     };
   });
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-// Dan ada kata 'export' di sini juga
 export function getPostBySlug(slug: string) {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
+    // Kita beri pengaman juga di halaman detail
     return {
       slug,
       content,
-      ...(data as { title: string; category: string; img: string; date: string }),
+      title: data.title || "Untitled",
+      category: data.category || "Uncategorized",
+      img: data.img || "/placeholder.jpg",
+      date: data.date || "",
     };
   } catch (e) {
     return null;
