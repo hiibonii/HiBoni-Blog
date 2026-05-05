@@ -15,6 +15,9 @@ export function getAllPosts() {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
 
+    console.log(`\n=== MEMBACA FILE: ${fileName} ===`);
+    console.log("Isi Frontmatter yang terbaca:", data);
+
     // Di sinilah kita pasang jaring pengaman aslinya (fallback)
     // Kalau data di file .md kosong atau salah ketik, sistem akan otomatis mengisinya
     return {
