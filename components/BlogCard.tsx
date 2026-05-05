@@ -25,7 +25,7 @@ export default function BlogCard({ post }: { post: any }) {
           </h2>
           <p className="text-gray-500 mt-2 line-clamp-2">
   {/* Gunakan fallback string kosong kalau description kebetulan belum diisi */}
-  {post.description || "Klik untuk membaca selengkapnya..."}
+  {post.description || "Selengkapnya..."}
 </p>
         </div>
       </article>
