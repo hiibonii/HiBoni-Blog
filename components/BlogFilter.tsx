@@ -9,7 +9,7 @@ export default function BlogFilter({ allPosts }: { allPosts: any[] }) {
   const categories = ["All", ...new Set(allPosts.map((post) => post.category))];
 
   const filteredPosts = allPosts.filter((post) => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = (post.title || "").toLowerCase().includes((searchQuery || "").toLowerCase());
     const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
