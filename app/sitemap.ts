@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/posts'; 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://alboni.com'; // Pastikan domain ini benar saat live
+  const baseUrl = 'https://hiboni.vercel.app/'; // Pastikan domain ini benar saat live
 
   // Ambil semua data artikel secara dinamis
   const allPosts = getAllPosts();
