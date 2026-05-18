@@ -4,7 +4,7 @@ title: "Film Pesta Babi Sukses Bikin Banyak Pihak Kebakaran Jenggot! Makin Dilar
 slug: "film-pesta-babi"
 category: "Opini"
 img: "https://images.unsplash.com/photo-1584446922609-d494912c35c5?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-date: "2026-18-05"
+date: "2026-05-18"
 description: "Film dokumenter Pesta Babi lagi ramai dibahas di medsos karena membongkar isu deforestasi di Papua sekaligus dilarang nobar di mana-mana. Gue mau bedah kenapa aksi pembubaran ini malah bikin filmnya makin viral dan apa isi di balik kritiknya."
 ---
 
