@@ -33,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <GoogleAnalytics gaId="G-ERKXWS4MF0" />
+        <Analytics />
         <footer className="mt-20 py-20 text-center border-t border-gray-50">
           <p className="text-[10px] text-gray-300 uppercase tracking-[0.3em] font-medium">
             © 2026 ALBONI JOURNAL
